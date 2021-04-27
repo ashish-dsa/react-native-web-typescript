@@ -1,7 +1,7 @@
-import React from 'react';
-import {AppRegistry, Platform, View, Text} from 'react-native';
+import React, {ReactElement} from "react";
+import {AppRegistry, Platform, Text, View} from "react-native";
 
-const App = () => {
+const App = (): ReactElement => {
   return (
     <View>
       <Text>Hello</Text>
@@ -9,9 +9,9 @@ const App = () => {
   );
 };
 
-AppRegistry.registerComponent('example', () => App);
-if (Platform.OS === 'web') {
-  AppRegistry.runApplication('example', {
-    rootTag: document.getElementById('root'),
+AppRegistry.registerComponent("myApp", () => App);
+if (Platform.OS === "web") {
+  AppRegistry.runApplication("myApp", {
+    rootTag: document.getElementById("root"),
   });
 }
