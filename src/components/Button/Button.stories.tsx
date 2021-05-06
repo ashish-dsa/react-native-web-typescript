@@ -9,7 +9,7 @@ stories.add("Button", () => (
   <PaperButton
     color={color("Color", "blue")}
     disabled={boolean("Disabled", false)}
-    mode={select("Mode", ["text", "outlined", "contained"], "text")}>
+    mode={select("Mode", ["text", "outlined", "contained"], "contained")}>
     {text("Label", "Default")}
   </PaperButton>
 ));
