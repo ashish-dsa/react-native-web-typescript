@@ -1,13 +1,30 @@
-import {ReactElement} from "react";
-import {AppRegistry, Platform, Text, View} from "react-native";
+import React, {ReactElement} from "react";
+import {AppRegistry, Image, Platform, StyleSheet, Text, View} from "react-native";
 
-const App = (): ReactElement => {
+const App: React.FC = (): ReactElement => {
   return (
-    <View>
-      <Text>Hello</Text>
+    <View style={styles.centerAlign}>
+      <Text>Hello Word</Text>
+      <Image
+        source={{
+          uri: "https://reactjs.org/logo-og.png",
+        }}
+        style={styles.image}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  centerAlign: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  image: {
+    height: 500,
+    width: 500,
+  },
+});
 
 AppRegistry.registerComponent("myApp", () => App);
 if (Platform.OS === "web") {
