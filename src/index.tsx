@@ -1,4 +1,4 @@
-import React, {ReactElement} from "react";
+import {ReactElement} from "react";
 import {AppRegistry, Platform, Text, View} from "react-native";
 
 const App = (): ReactElement => {
