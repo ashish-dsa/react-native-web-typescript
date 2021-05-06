@@ -1,15 +1,10 @@
-//import * as React from "react";
+import * as React from "react";
+import Button from "./Button";
 
-//import Button from "./Button";
+describe("Button", () => {
+  it("should render correctly", () => {
+    const component = (<Button>Test</Button>).toJSON();
 
-//describe("Button", () => {
-//  it("should render correctly", () => {
-//   const component = (
-//      <Button>
-//        Test
-//      </Button>,
-//    ).toJSON();
-
-//    expect(component).toMatchSnapshot();
-//  });
-//});
+    expect(component).toMatchSnapshot();
+  });
+});
