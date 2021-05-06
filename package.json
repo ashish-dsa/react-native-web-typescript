@@ -27,6 +27,7 @@
     "react-native-reanimated": "^2.1.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.1.1",
+    "react-native-vector-icons": "^8.1.0",
     "react-native-web": "^0.16.2",
     "react-scripts": "^4.0.3"
   },
