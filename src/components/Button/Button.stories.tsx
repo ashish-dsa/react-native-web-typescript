@@ -1,6 +1,5 @@
 import {boolean, color, select, text, withKnobs} from "@storybook/addon-knobs";
 import {storiesOf} from "@storybook/react-native";
-import * as React from "react";
 import {Button as PaperButton} from "react-native-paper";
 
 const stories = storiesOf("Components/Button", module);
