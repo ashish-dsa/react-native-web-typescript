@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "concurrently --kill-others-on-fail \"yarn start --reset-cache\" \"react-native run-android && react-native log-android\" \"yarn stay-awake-android\"",
+    "ios": "concurrently --kill-others-on-fail \"yarn start --reset-cache\" \"react-native run-ios\"",
     "start": "react-native start",
     "web": "craco start",
     "build": "craco build",
