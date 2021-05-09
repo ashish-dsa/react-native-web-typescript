@@ -1,1 +1,8 @@
-![Webp net-gifmaker (2)](https://user-images.githubusercontent.com/19613367/117536617-ab53d100-b019-11eb-8f5c-b5529d473ada.gif)
+# Typescript Template for React Native Web
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/19613367/117573257-7f594e00-b0f4-11eb-94c7-6bf23c291458.gif)
+
+* Android
+* iOS
+* Web
+* Prettier
+* Eslint
