@@ -29,6 +29,9 @@ build/
 local.properties
 *.iml
 *.keystore
+*.apk
+*.aab
+*.hprof
 
 # node.js
 #
