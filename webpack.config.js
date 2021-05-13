@@ -9,7 +9,7 @@ module.exports = {
     filename: "index.bundle.js",
   },
   devServer: {
-    port: 3010,
+    port: 3000,
     watchContentBase: true,
   },
   module: {
