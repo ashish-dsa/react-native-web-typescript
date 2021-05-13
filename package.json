@@ -3,22 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "concurrently --kill-others-on-fail \"yarn start --reset-cache\" \"react-native run-android && react-native log-android\" \"yarn stay-awake-android\"",
+    "ios": "concurrently --kill-others-on-fail \"yarn start --reset-cache\" \"react-native run-ios\"",
     "start": "react-native start",
     "web": "webpack serve --mode development",
     "build": "craco build",
     "test": "craco test --env=jsdom",
     "lint": "tsc && eslint '**/*.[jt]s?(x)' --cache --fix",
-    "clear": "rm -rf node_modules && yarn && rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; jest --clearCache; cd ios; pod install --repo-update; cd ..; cd android; ./gradlew clean; cd ..;",
+    "clean": "rm -rf node_modules && yarn && concurrently --kill-others-on-fail \"yarn clean-android\" \"yarn clean-ios\"",
+    "clean-android": "cd android && rm -rf ./android/build && rm -rf ./android/.gradle && rm -rf ./android/app/build && ./gradlew clean && cd ..",
+    "clean-ios": "rm -rf ~/Library/Developer/Xcode/DerivedData && cd ios && rm -rf build Pods && pod install && cd ..",
     "generate": "plop --plopfile ./.plop/plop.config.js",
     "storybook": "start-storybook -p 7007"
   },
   "dependencies": {
-    "@craco/craco": "^6.1.2",
-    "core-js": "3",
+    "@craco/craco": "6.1.2",
     "react": "17.0.2",
-    "react-dom": "^17.0.2",
+    "react-dom": "17.0.2",
     "react-native": "0.64.1",
     "react-native-paper": "^4.8.1",
     "react-native-vector-icons": "^8.1.0",
@@ -75,7 +76,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "resolutions": {
-    "@types/react": "^17"
+    "@types/react": "17"
   },
   "jest": {
     "preset": "react-native",
