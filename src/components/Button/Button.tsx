@@ -1,21 +1,12 @@
-import React, { ReactElement, useEffect } from "react";
+import React, {ReactElement, useEffect} from "react";
 
-interface IButtonProps {
-
-}
-const Button: React.FC<IButtonProps> = (props):ReactElement => {
-
-  
+interface IButtonProps {}
+const Button: React.FC<IButtonProps> = (props): ReactElement => {
   useEffect(() => {
-
-  return () => {};
+    return () => {};
   }, []);
 
-  return (
-       <>
-       </>
-    )
-
+  return <Button></Button>;
 };
 
-  export default Button;
+export default Button;
