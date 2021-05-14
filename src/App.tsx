@@ -1,45 +1,27 @@
+import {BaseNavigator} from "navigation/BaseNavigator";
 import React, {ReactElement} from "react";
-import {StyleSheet, View} from "react-native";
-import {Button, Card, Paragraph, Provider as PaperProvider, Title} from "react-native-paper";
-import iconFont from "react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf";
+import {StatusBar} from "react-native";
+import {DefaultTheme, Provider as PaperProvider} from "react-native-paper";
 
 require("file-loader?name=[name].[ext]!./index.html");
 
 const App: React.FC = (): ReactElement => {
+  const theme = {
+    ...DefaultTheme,
+    roundness: 2,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: "#000000",
+      accent: "#018786",
+    },
+  };
+
   return (
-    <PaperProvider>
-      <style type="text/css">{`
-         @font-face {
-          src: url(${iconFont});
-          font-family: MaterialCommunityIcons;
-        }
-       `}</style>
-      <View style={styles.centerAlign}>
-        <Card>
-          <Card.Title title="Card Title" subtitle="Card Subtitle" />
-          <Card.Content>
-            <Title>Card title</Title>
-            <Paragraph>Card content</Paragraph>
-          </Card.Content>
-          <Card.Cover source={{uri: "https://picsum.photos/700"}} />
-          <Card.Actions>
-            <Button>Cancel</Button>
-            <Button>Ok</Button>
-          </Card.Actions>
-        </Card>
-        <Button icon="camera" mode="contained" onPress={() => console.log("Pressed")}>
-          Press me
-        </Button>
-      </View>
+    <PaperProvider theme={theme}>
+      <StatusBar backgroundColor="#000000" barStyle="light-content" />
+      <BaseNavigator />
     </PaperProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  centerAlign: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
 
 export default App;
