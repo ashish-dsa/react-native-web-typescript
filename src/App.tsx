@@ -1,25 +1,28 @@
+// @ts-nocheck
 import {BaseNavigator} from "navigation/BaseNavigator";
 import React, {ReactElement} from "react";
-import {StatusBar} from "react-native";
-import {DefaultTheme, Provider as PaperProvider} from "react-native-paper";
+import {Platform, StatusBar} from "react-native";
+import {Provider as PaperProvider} from "react-native-paper";
+import iconFont from "react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf";
+import {CombinedDefaultTheme} from "services/theming";
 
-require("file-loader?name=[name].[ext]!./index.html");
-
+const theme = {
+  ...CombinedDefaultTheme,
+};
 const App: React.FC = (): ReactElement => {
-  const theme = {
-    ...DefaultTheme,
-    roundness: 2,
-    colors: {
-      ...DefaultTheme.colors,
-      primary: "#000000",
-      accent: "#018786",
-    },
-  };
-
   return (
     <PaperProvider theme={theme}>
-      <StatusBar backgroundColor="#000000" barStyle="light-content" />
-      <BaseNavigator />
+      <StatusBar translucent backgroundColor="transparent" />
+      {Platform.OS === "web" ? (
+        <style type="text/css">{`
+        @font-face {
+         src: url(${iconFont});
+         font-family: MaterialCommunityIcons;
+       }
+      `}</style>
+      ) : null}
+
+      <BaseNavigator theme={theme} />
     </PaperProvider>
   );
 };
