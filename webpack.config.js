@@ -1,11 +1,12 @@
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
     entry: "./index.js",
   },
   output: {
-    path: path.join(__dirname, "/public"),
+    path: path.join(__dirname, "/dist"),
     filename: "index.bundle.js",
   },
   devServer: {
@@ -39,8 +40,15 @@ module.exports = {
       screens: path.resolve(__dirname, "src", "screens"),
       components: path.resolve(__dirname, "src", "components"),
       navigation: path.resolve(__dirname, "src", "navigation"),
+      services: path.resolve(__dirname, "src", "services"),
+      utils: path.resolve(__dirname, "src", "utils"),
     },
     modules: [path.join(__dirname, "./node_modules")],
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{from: "static"}],
+    }),
+  ],
 };

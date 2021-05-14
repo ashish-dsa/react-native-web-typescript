@@ -7,8 +7,10 @@ const {{ properCase name }}: React.FC<I{{ properCase name }}Props> = (props):Rea
 
   
   useEffect(() => {
-
-  return () => {};
+    console.log({{ properCase name }}+" mounted")
+  return () => {
+        console.log({{ properCase name }}+" unmounted")
+  };
   }, []);
 
   return (

@@ -1,4 +1,4 @@
 export enum ROUTES {
-  Home = "Home",
-  Init = "Init",
+  ExampleScreen1 = "ExampleScreen1",
+  ExampleScreen2 = "ExampleScreen2",
 }
