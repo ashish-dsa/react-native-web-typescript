@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    entry: "./src/index.tsx",
+    entry: "./index.js",
   },
   output: {
     path: path.join(__dirname, "/public"),
@@ -21,9 +21,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env", "@babel/preset-react"],
-            plugins: [
-              "@babel/plugin-proposal-class-properties", // making sure class properties is understood by babel
-            ],
+            plugins: [["@babel/plugin-proposal-class-properties", {loose: true}]],
           },
         },
       },
@@ -37,7 +35,12 @@ module.exports = {
     alias: {
       "react-native": "react-native-web",
       "@storybook/react-native": "@storybook/react",
+      "react-native-gesture-handler": "react-native-web",
+      screens: path.resolve(__dirname, "src", "screens"),
+      components: path.resolve(__dirname, "src", "components"),
+      navigation: path.resolve(__dirname, "src", "navigation"),
     },
     modules: [path.join(__dirname, "./node_modules")],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
 };
