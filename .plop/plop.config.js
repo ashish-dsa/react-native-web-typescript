@@ -1,44 +1,45 @@
-const PATH = '../src/components/';
+const COMPONENTS_PATH = "../src/components/";
+const SCREENS_PATH = "../src/screens/";
 const componentGenerator = {
-  description: 'Create a new component',
+  description: "Create a new component",
   prompts: [
     {
-      type: 'input',
-      name: 'name',
-      message: 'Component name?',
-      default: 'Button',
+      type: "input",
+      name: "name",
+      message: "Component name?",
+      default: "Button",
     },
     {
-      type: 'confirm',
-      name: 'stateless',
-      message: 'Is it a Stateless Component?',
-      default: 'y',
-    }
+      type: "confirm",
+      name: "stateless",
+      message: "Is it a Stateless Component?",
+      default: "y",
+    },
   ],
-  actions: ({ stateless }) => {
+  actions: ({stateless}) => {
     const actions = [
       {
-        type: 'add',
-        path: PATH+'{{properCase name}}/index.tsx',
-        templateFile: './index.tsx.hbs',
+        type: "add",
+        path: COMPONENTS_PATH + "{{properCase name}}/index.tsx",
+        templateFile: "./index.tsx.hbs",
         abortOnFail: true,
       },
       {
-        type: 'add',
-        path: PATH+'{{properCase name}}/{{properCase name}}.tsx',
-        templateFile: stateless ? './componentName.sfc.tsx.hbs' : './componentName.class.tsx.hbs',
+        type: "add",
+        path: COMPONENTS_PATH + "{{properCase name}}/{{properCase name}}.tsx",
+        templateFile: stateless ? "./componentName.sfc.tsx.hbs" : "./componentName.class.tsx.hbs",
         abortOnFail: true,
       },
       {
-        type: 'add',
-        path: PATH+'{{properCase name}}/{{properCase name}}.test.tsx',
-        templateFile: './componentName.test.tsx.hbs',
+        type: "add",
+        path: COMPONENTS_PATH + "{{properCase name}}/{{properCase name}}.test.tsx",
+        templateFile: "./componentName.test.tsx.hbs",
         abortOnFail: true,
       },
       {
-        type: 'add',
-        path: PATH+'{{properCase name}}/{{properCase name}}.stories.tsx',
-        templateFile: './componentName.story.tsx.hbs',
+        type: "add",
+        path: COMPONENTS_PATH + "{{properCase name}}/{{properCase name}}.stories.tsx",
+        templateFile: "./componentName.story.tsx.hbs",
         abortOnFail: true,
       },
     ];
@@ -47,8 +48,44 @@ const componentGenerator = {
   },
 };
 
-
+const screenGenerator = {
+  description: "Create a new screen",
+  prompts: [
+    {
+      type: "input",
+      name: "name",
+      message: "Screen name?",
+      default: "Button",
+    },
+    {
+      type: "confirm",
+      name: "stateless",
+      message: "Is it a Stateless Screen?",
+      default: "y",
+    },
+  ],
+  actions: ({stateless}) => {
+    const actions = [
+      {
+        type: "add",
+        path: SCREENS_PATH + "{{properCase name}}/index.tsx",
+        templateFile: "./index.tsx.hbs",
+        abortOnFail: true,
+      },
+      {
+        type: "add",
+        path: SCREENS_PATH + "{{properCase name}}/{{properCase name}}.tsx",
+        templateFile: stateless ? "./componentName.sfc.tsx.hbs" : "./componentName.class.tsx.hbs",
+        abortOnFail: true,
+      },
+    ];
+    return actions;
+  },
+};
 
 module.exports = plop => {
-  plop.setGenerator('component', componentGenerator);
+  plop.setGenerator("component", componentGenerator);
+};
+module.exports = plop => {
+  plop.setGenerator("screen", screenGenerator);
 };
