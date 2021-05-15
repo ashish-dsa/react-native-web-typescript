@@ -5,7 +5,7 @@
 * Android + iOS + Web
 * Storybook
 * React Native Paper
-* Prettier
-* Eslint
+* Custom Webpack
+* Jest
 * Prettier
 * Eslint
