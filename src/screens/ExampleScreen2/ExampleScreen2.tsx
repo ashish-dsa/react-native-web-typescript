@@ -1,6 +1,6 @@
 import {NavigationProp} from "@react-navigation/core";
 import {default as React, ReactElement, useEffect} from "react";
-import {StyleSheet, View} from "react-native";
+import {ScrollView, StyleSheet, View} from "react-native";
 import {Appbar, Button, List, Searchbar, Snackbar} from "react-native-paper";
 
 interface IExampleScreen2Props {
@@ -23,7 +23,7 @@ const ExampleScreen2: React.FC<IExampleScreen2Props> = (props): ReactElement => 
   }, []);
 
   return (
-    <View style={styles.backgroundStyle}>
+    <ScrollView style={styles.backgroundStyle}>
       <Appbar.Header>
         <Appbar.BackAction onPress={() => props.navigation.goBack()} />
         <Appbar.Content title="Example Screen 2" subtitle="" />
@@ -57,7 +57,7 @@ const ExampleScreen2: React.FC<IExampleScreen2Props> = (props): ReactElement => 
           </Snackbar>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
