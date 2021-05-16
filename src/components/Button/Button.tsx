@@ -1,12 +1,10 @@
-import React, {ReactElement, useEffect} from "react";
+import React, {ReactElement} from "react";
+import {Button as PaperButton} from "react-native-paper";
 
-interface IButtonProps {}
-const Button: React.FC<IButtonProps> = (props): ReactElement => {
-  useEffect(() => {
-    return () => {};
-  }, []);
+export type ButtonProps = React.ComponentProps<typeof PaperButton>;
 
-  return <Button></Button>;
+const Card: React.FC<ButtonProps> = (props): ReactElement => {
+  return <PaperButton {...props} />;
 };
 
-export default Button;
+export default Card;

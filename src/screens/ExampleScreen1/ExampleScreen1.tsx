@@ -1,8 +1,10 @@
 import {NavigationProp} from "@react-navigation/core";
 import {ROUTES} from "navigation/constants";
 import {default as React, ReactElement, useEffect} from "react";
-import {StyleSheet, View} from "react-native";
-import {Appbar, Button, Card} from "react-native-paper";
+import {ScrollView, StyleSheet} from "react-native";
+import {Appbar} from "react-native-paper";
+import Button from "src/components/Button";
+import Card, {CardActions, CardCover, CardTitle} from "src/components/Card";
 
 interface IExampleScreen1Props {
   navigation: NavigationProp<any>;
@@ -16,27 +18,24 @@ const ExampleScreen1: React.FC<IExampleScreen1Props> = (props): ReactElement => 
     };
   }, [props]);
   return (
-    <View style={styles.backgroundStyle}>
+    <ScrollView style={styles.backgroundStyle}>
       <Appbar.Header>
         <Appbar.Content title="Example Screen 1" subtitle="" />
       </Appbar.Header>
       {[1, 1, 1].map((value, index) => {
         return (
           <Card style={styles.card} key={index}>
-            <Card.Title title="Card Title" subtitle="Card Subtitle" />
-            <Card.Cover source={{uri: "https://picsum.photos/70" + index.toString()}} />
-            <Card.Actions>
-              <Button
-                icon="page-next-outline"
-                mode="contained"
-                onPress={() => props.navigation.navigate(ROUTES.ExampleScreen2)}>
+            <CardTitle title="Card Title" subtitle="Card Subtitle" />
+            <CardCover source={{uri: "https://picsum.photos/70" + index.toString()}} />
+            <CardActions>
+              <Button mode="contained" onPress={() => props.navigation.navigate(ROUTES.ExampleScreen2)}>
                 Go to next screen
               </Button>
-            </Card.Actions>
+            </CardActions>
           </Card>
         );
       })}
-    </View>
+    </ScrollView>
   );
 };
 
