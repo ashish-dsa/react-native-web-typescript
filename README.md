@@ -33,6 +33,13 @@ yarn clean
 npx react-native-rename "New App Name"
 ```
 
+### Generate components and screens
+
+```sh
+yarn generate component
+yarn generate screen
+```
+
 ### Run - iOS, Android and Web respectively
 
 ```sh
