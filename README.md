@@ -12,13 +12,19 @@
 * Prettier
 * Eslint
 
-### Install dependencies - Brew, Node, Cocoapods and Yarn
+### Install global dependencies - Brew, Node, Cocoapods and Yarn
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install node
 sudo gem install cocoapods
 npm i -g yarn
+```
+
+### Install local dependencies - node modules, pods and cleanup
+
+```sh
+yarn clean
 ```
 
 ### Rename app
