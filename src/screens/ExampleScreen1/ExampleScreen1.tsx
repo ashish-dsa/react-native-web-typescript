@@ -1,9 +1,6 @@
 import {NavigationProp} from "@react-navigation/core";
 import Button from "components/Button";
-import Card from "components/Card";
-import CardActions from "components/Card/CardActions";
-import CardCover from "components/Card/CardCover";
-import CardTitle from "components/Card/CardTitle";
+import Card, {CardActions, CardCover, CardTitle} from "components/Card";
 import {ROUTES} from "navigation/constants";
 import {default as React, ReactElement, useEffect} from "react";
 import {StyleSheet, View} from "react-native";
