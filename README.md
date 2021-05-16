@@ -1,6 +1,6 @@
 # Typescript Template for React Native Web
 
-![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/19613367/118410660-2ec29180-b6ae-11eb-950c-67995b271db4.gif)
+![ezgif com-gif-maker (12)](https://user-images.githubusercontent.com/19613367/118410958-ce345400-b6af-11eb-922d-2697ceb17b82.gif)
 
 * Android + iOS + Web
 * Storybook
