@@ -1,10 +1,10 @@
 import {NavigationProp} from "@react-navigation/core";
+import Button from "components/Button";
+import Card, {CardActions, CardCover, CardTitle} from "components/Card";
 import {ROUTES} from "navigation/constants";
 import {default as React, ReactElement, useEffect} from "react";
 import {ScrollView, StyleSheet} from "react-native";
 import {Appbar} from "react-native-paper";
-import Button from "src/components/Button";
-import Card, {CardActions, CardCover, CardTitle} from "src/components/Card";
 
 interface IExampleScreen1Props {
   navigation: NavigationProp<any>;

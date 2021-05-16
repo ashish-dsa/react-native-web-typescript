@@ -12,7 +12,7 @@ const componentGenerator = {
     {
       type: "confirm",
       name: "stateless",
-      message: "Is it a Stateless Component?",
+      message: "Is it Stateless?",
       default: "y",
     },
   ],
@@ -55,12 +55,12 @@ const screenGenerator = {
       type: "input",
       name: "name",
       message: "Screen name?",
-      default: "Button",
+      default: "Home",
     },
     {
       type: "confirm",
       name: "stateless",
-      message: "Is it a Stateless Screen?",
+      message: "Is it Stateless?",
       default: "y",
     },
   ],
@@ -85,7 +85,5 @@ const screenGenerator = {
 
 module.exports = plop => {
   plop.setGenerator("component", componentGenerator);
-};
-module.exports = plop => {
   plop.setGenerator("screen", screenGenerator);
 };
