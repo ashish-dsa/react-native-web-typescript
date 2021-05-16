@@ -2,8 +2,8 @@ import {text, withKnobs} from "@storybook/addon-knobs";
 import {storiesOf} from "@storybook/react-native";
 import React from "react";
 import Card from "./Card";
-import CardCover from "./CardCover";
-import CardTitle from "./CardTitle";
+import {CardCover} from "./CardCover";
+import {CardTitle} from "./CardTitle";
 
 const stories = storiesOf("Components/Card", module);
 stories.addDecorator(withKnobs);
