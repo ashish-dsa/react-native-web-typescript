@@ -21,6 +21,13 @@ sudo gem install cocoapods
 npm i -g yarn
 ```
 
+### Remove git connection to this project and start fresh
+
+```sh
+rm -rf .git
+git init
+```
+
 ### Install local dependencies - node modules, pods and cleanup
 
 ```sh
