@@ -9,14 +9,8 @@ const componentGenerator = {
       message: "Component name?",
       default: "Button",
     },
-    {
-      type: "confirm",
-      name: "stateless",
-      message: "Is it Stateless?",
-      default: "y",
-    },
   ],
-  actions: ({stateless}) => {
+  actions: () => {
     const actions = [
       {
         type: "add",
@@ -27,7 +21,7 @@ const componentGenerator = {
       {
         type: "add",
         path: COMPONENTS_PATH + "{{properCase name}}/{{properCase name}}.tsx",
-        templateFile: stateless ? "./componentName.sfc.tsx.hbs" : "./componentName.class.tsx.hbs",
+        templateFile: "./componentName.sfc.tsx.hbs",
         abortOnFail: true,
       },
       {
@@ -57,14 +51,8 @@ const screenGenerator = {
       message: "Screen name?",
       default: "Home",
     },
-    {
-      type: "confirm",
-      name: "stateless",
-      message: "Is it Stateless?",
-      default: "y",
-    },
   ],
-  actions: ({stateless}) => {
+  actions: () => {
     const actions = [
       {
         type: "add",
@@ -75,7 +63,7 @@ const screenGenerator = {
       {
         type: "add",
         path: SCREENS_PATH + "{{properCase name}}/{{properCase name}}.tsx",
-        templateFile: stateless ? "./componentName.sfc.tsx.hbs" : "./componentName.class.tsx.hbs",
+        templateFile: "./componentName.sfc.tsx.hbs",
         abortOnFail: true,
       },
     ];
