@@ -24,8 +24,8 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-        loader: "file-loader",
+        test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
+        type: "asset",
       },
     ],
   },
@@ -39,6 +39,7 @@ module.exports = {
       navigation: path.resolve(__dirname, "src", "navigation"),
       services: path.resolve(__dirname, "src", "services"),
       utils: path.resolve(__dirname, "src", "utils"),
+      assets: path.resolve(__dirname, "src", "assets"),
     },
     modules: [path.join(__dirname, "./node_modules")],
     extensions: [".js", ".jsx", ".ts", ".tsx"],

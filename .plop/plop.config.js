@@ -20,8 +20,8 @@ const componentGenerator = {
     const actions = [
       {
         type: "add",
-        path: COMPONENTS_PATH + "{{properCase name}}/index.tsx",
-        templateFile: "./index.tsx.hbs",
+        path: COMPONENTS_PATH + "{{properCase name}}/index.ts",
+        templateFile: "./index.ts.hbs",
         abortOnFail: true,
       },
       {
@@ -68,8 +68,8 @@ const screenGenerator = {
     const actions = [
       {
         type: "add",
-        path: SCREENS_PATH + "{{properCase name}}/index.tsx",
-        templateFile: "./index.tsx.hbs",
+        path: SCREENS_PATH + "{{properCase name}}/index.ts",
+        templateFile: "./index.ts.hbs",
         abortOnFail: true,
       },
       {
